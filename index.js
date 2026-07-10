@@ -269,6 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Replace this with your Web3Forms access key (register free at https://web3forms.com)
         const accessKey = "43ea2721-580d-43dc-b858-4e41a7651830"; 
 
+        // Get hCaptcha token
+        const hCaptcha = contactForm.querySelector('textarea[name=h-captcha-response]');
+        const hCaptchaResponse = hCaptcha ? hCaptcha.value : "";
+
         if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
             // Simulation fallback
             setTimeout(() => {
@@ -277,7 +281,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnText.textContent = "Send Message";
                 btnIcon.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
                 contactForm.reset();
+                if (typeof hcaptcha !== "undefined") hcaptcha.reset();
             }, 1200);
+            return;
+        }
+
+        // Validate hCaptcha response on frontend
+        if (!hCaptchaResponse) {
+            showToast("Captcha Required", "Please check the hCaptcha box to verify you are human.", "error");
+            submitBtn.disabled = false;
+            btnText.textContent = "Send Message";
+            btnIcon.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
             return;
         }
 
@@ -293,7 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: name,
                 email: email,
                 subject: subject,
-                message: message
+                message: message,
+                "h-captcha-response": hCaptchaResponse
             })
         })
         .then(async (response) => {
@@ -312,6 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = false;
             btnText.textContent = "Send Message";
             btnIcon.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+            if (typeof hcaptcha !== "undefined") hcaptcha.reset();
         });
     });
 
