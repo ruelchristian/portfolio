@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const typedTextSpan = document.getElementById('typed-text');
     const textArray = [
-        "Junior Web Developer",
-        "C# & ASP.NET Core Specialist",
+        "Backend Developer",
+        "C# & .NET Core Specialist",
         "Incoming 4th Year BSIT Student",
-        "AI-Assisted Systems Engineer"
+        "AI-Assisted Backend Engineer"
     ];
     const typingSpeed = 100;
     const erasingSpeed = 60;
