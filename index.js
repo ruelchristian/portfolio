@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = document.getElementById('form-message').value;
 
         // Replace this with your Web3Forms access key (register free at https://web3forms.com)
-        const accessKey = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"; 
+        const accessKey = "43ea2721-580d-43dc-b858-4e41a7651830"; 
 
         if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
             // Simulation fallback
