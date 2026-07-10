@@ -52,3 +52,11 @@ This documentation outlines the core interactive features implemented in Ruel Ch
   - Controls entry and exit scaling/fading smoothly using Anime.js, and disables browser scroll behaviors when active.
   - Automatically binds ESC key and clicking outside the image container to exit the modal gracefully.
 * **Rationale**: Maintains a clean page layout with a small, neat layout mockup preview, while letting interested viewers easily zoom in to examine the fine detail of the application UI.
+
+## 8. Interactive Tech Atom Parallax Visual
+* **What it does**: Renders an interactive 3D tech atom representing Ruel's core backend stack. Moving the mouse across the hero section causes the orbits, nodes, and nucleus to tilt and float in 3D perspective space (parallax).
+* **Implementation Details**:
+  - Leverages CSS 3D properties (`perspective: 1000px`, `transform-style: preserve-3d`) to establish spatial depth.
+  - Subtly maps client mouse movements to dynamically calculate translation offsets for orbits, nodes, and the C# nucleus at different speeds (depths).
+  - Automatically resets positions smoothly on mouseleave, returning to normal CSS floating loops.
+* **Rationale**: Immediate wow-factor on page load that highlights interactive scripting skills and backend priorities.
