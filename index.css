@@ -549,7 +549,6 @@ body.light-theme .btn-primary:hover {
     width: 100%;
     max-width: 420px;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
 }
 
 .glow-dot {
@@ -557,8 +556,8 @@ body.light-theme .btn-primary:hover {
 }
 
 @keyframes blink {
-    0% { opacity: 0.3; filter: drop-shadow(0 0 1px currentColor); }
-    100% { opacity: 1; filter: drop-shadow(0 0 8px currentColor); }
+    0% { opacity: 0.35; stroke-width: 1.5px; }
+    100% { opacity: 0.95; stroke-width: 3px; }
 }
 
 .orbit-item {
@@ -1465,12 +1464,11 @@ body.light-theme .form-group input:focus, body.light-theme .form-group textarea:
 /* Clickable zoom indicator on project preview image */
 .browser-image {
     cursor: zoom-in;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .browser-image:hover {
-    opacity: 0.95;
-    transform: scale(1.01);
+    opacity: 0.92;
 }
 
 /* Responsive Media Queries */

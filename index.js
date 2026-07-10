@@ -431,7 +431,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Parallax shift the inner wrapper nodes (decoupled from the keyframe float loops!)
             parallaxNodes.forEach((node) => {
                 const depth = parseFloat(node.getAttribute('data-depth')) || 0.3;
-                node.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+                const tx = Math.round(moveX * depth);
+                const ty = Math.round(moveY * depth);
+                node.style.transform = `translate(${tx}px, ${ty}px)`;
                 node.style.transition = 'transform 0.1s cubic-bezier(0.25, 1, 0.5, 1)';
             });
         });
