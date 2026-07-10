@@ -333,9 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const hero = document.getElementById('hero');
     const techSvg = document.querySelector('.tech-svg');
-    const serverNode = document.querySelector('.server-node'); // Center nucleus
-    const orbits = document.querySelectorAll('.tech-svg ellipse'); // Orbital tracks
-    const orbitItems = document.querySelectorAll('.orbit-item'); // Orbiting nodes
+    const parallaxNodes = document.querySelectorAll('.parallax-node');
 
     if (hero && techSvg) {
         hero.addEventListener('mousemove', (e) => {
@@ -344,30 +342,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const y = e.clientY - rect.top - rect.height / 2;  // Offset from center Y
 
             // Normalize offsets
-            const moveX = (x / rect.width) * 40;
-            const moveY = (y / rect.height) * 40;
+            const moveX = (x / rect.width) * 45;
+            const moveY = (y / rect.height) * 45;
 
             // Apply 3D rotation tilt on the overall SVG
             techSvg.style.transform = `rotateX(${-moveY * 0.4}deg) rotateY(${moveX * 0.4}deg)`;
             
-            // Subtly shift C# nucleus (Center layer)
-            if (serverNode) {
-                serverNode.style.transform = `translate(${moveX * 0.25}px, ${moveY * 0.25}px)`;
-                serverNode.style.transition = 'transform 0.05s ease-out';
-            }
-
-            // Shift orbital tracks slightly
-            orbits.forEach((orbit, index) => {
-                const shiftFactor = (index + 1) * 0.15;
-                orbit.style.transform = `translate(${moveX * shiftFactor}px, ${moveY * shiftFactor}px)`;
-                orbit.style.transition = 'transform 0.05s ease-out';
-            });
-
-            // Parallax shift the orbiting items (different depths)
-            orbitItems.forEach((item, index) => {
-                const depth = (index + 1) * 0.35;
-                item.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
-                item.style.transition = 'transform 0.05s ease-out';
+            // Parallax shift the inner wrapper nodes (decoupled from the keyframe float loops!)
+            parallaxNodes.forEach((node) => {
+                const depth = parseFloat(node.getAttribute('data-depth')) || 0.3;
+                node.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+                node.style.transition = 'transform 0.08s ease-out';
             });
         });
 
@@ -376,19 +361,9 @@ document.addEventListener('DOMContentLoaded', () => {
             techSvg.style.transform = '';
             techSvg.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
             
-            if (serverNode) {
-                serverNode.style.transform = '';
-                serverNode.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-            }
-
-            orbits.forEach(orbit => {
-                orbit.style.transform = '';
-                orbit.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-            });
-
-            orbitItems.forEach(item => {
-                item.style.transform = '';
-                item.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            parallaxNodes.forEach(node => {
+                node.style.transform = '';
+                node.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
             });
         });
     }

@@ -110,50 +110,60 @@
                             <ellipse cx="250" cy="250" rx="160" ry="65" stroke="rgba(244, 63, 94, 0.15)" stroke-width="1.5" fill="none" transform="rotate(-65, 250, 250)"/>
 
                             <!-- CENTRAL NUCLEUS: C# CORE -->
-                            <g class="server-node">
-                                <!-- Glowing outer ring -->
-                                <circle cx="250" cy="250" r="55" fill="rgba(99, 102, 241, 0.08)" stroke="#818cf8" stroke-width="2" class="glow-dot"/>
-                                <!-- Solid core sphere -->
-                                <circle cx="250" cy="250" r="42" fill="url(#core-gradient)" stroke="#4f46e5" stroke-width="2"/>
-                                <!-- Tech Symbol -->
-                                <text x="250" y="243" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="16" font-weight="800" text-anchor="middle">C#</text>
-                                <text x="250" y="259" fill="#a5b4fc" font-family="Plus Jakarta Sans" font-size="9" font-weight="bold" text-anchor="middle">ASP.NET CORE</text>
+                            <g class="parallax-node" data-depth="0.2">
+                                <g class="server-node">
+                                    <!-- Glowing outer ring -->
+                                    <circle cx="250" cy="250" r="55" fill="rgba(99, 102, 241, 0.08)" stroke="#818cf8" stroke-width="2" class="glow-dot"/>
+                                    <!-- Solid core sphere -->
+                                    <circle cx="250" cy="250" r="42" fill="url(#core-gradient)" stroke="#4f46e5" stroke-width="2"/>
+                                    <!-- Tech Symbol -->
+                                    <text x="250" y="243" fill="#ffffff" font-family="Plus Jakarta Sans" font-size="16" font-weight="800" text-anchor="middle">C#</text>
+                                    <text x="250" y="259" fill="#a5b4fc" font-family="Plus Jakarta Sans" font-size="9" font-weight="bold" text-anchor="middle">ASP.NET CORE</text>
+                                </g>
                             </g>
 
                             <!-- ORBITING NODE 1: CLAUDE (Top-Left) -->
-                            <g class="orbit-item item-1">
-                                <circle cx="100" cy="150" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#cc5a37" stroke-width="2"/>
-                                <circle cx="100" cy="150" r="25" fill="rgba(204, 90, 55, 0.05)" />
-                                <!-- Icon: Terminal / Brain symbol -->
-                                <text x="100" y="145" fill="#cc5a37" font-family="Fira Code" font-size="12" font-weight="bold" text-anchor="middle">&gt;_</text>
-                                <text x="100" y="162" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">CLAUDE</text>
+                            <g class="parallax-node" data-depth="0.35">
+                                <g class="orbit-item item-1">
+                                    <circle cx="100" cy="150" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#cc5a37" stroke-width="2"/>
+                                    <circle cx="100" cy="150" r="25" fill="rgba(204, 90, 55, 0.05)" />
+                                    <!-- Icon: Terminal / Brain symbol -->
+                                    <text x="100" y="145" fill="#cc5a37" font-family="Fira Code" font-size="12" font-weight="bold" text-anchor="middle">&gt;_</text>
+                                    <text x="100" y="162" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">CLAUDE</text>
+                                </g>
                             </g>
 
                             <!-- ORBITING NODE 2: MCP (Top-Right) -->
-                            <g class="orbit-item item-2">
-                                <circle cx="390" cy="170" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#38bdf8" stroke-width="2"/>
-                                <circle cx="390" cy="170" r="25" fill="rgba(56, 189, 248, 0.05)" />
-                                <!-- Icon: Puzzle Pieces / Connections symbol -->
-                                <text x="390" y="166" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="14" font-weight="bold" text-anchor="middle">🧩</text>
-                                <text x="390" y="182" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">MCP</text>
+                            <g class="parallax-node" data-depth="0.45">
+                                <g class="orbit-item item-2">
+                                    <circle cx="390" cy="170" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#38bdf8" stroke-width="2"/>
+                                    <circle cx="390" cy="170" r="25" fill="rgba(56, 189, 248, 0.05)" />
+                                    <!-- Icon: Puzzle Pieces / Connections symbol -->
+                                    <text x="390" y="166" fill="#38bdf8" font-family="Plus Jakarta Sans" font-size="14" font-weight="bold" text-anchor="middle">🧩</text>
+                                    <text x="390" y="182" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">MCP</text>
+                                </g>
                             </g>
 
                             <!-- ORBITING NODE 3: POSTGRES (Bottom-Left) -->
-                            <g class="orbit-item item-3">
-                                <circle cx="120" cy="330" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#10b981" stroke-width="2"/>
-                                <circle cx="120" cy="330" r="25" fill="rgba(16, 185, 129, 0.05)" />
-                                <!-- Icon: DB stack symbol -->
-                                <text x="120" y="326" fill="#10b981" font-family="Plus Jakarta Sans" font-size="14" text-anchor="middle">🗄️</text>
-                                <text x="120" y="342" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">POSTGRES</text>
+                            <g class="parallax-node" data-depth="0.55">
+                                <g class="orbit-item item-3">
+                                    <circle cx="120" cy="330" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#10b981" stroke-width="2"/>
+                                    <circle cx="120" cy="330" r="25" fill="rgba(16, 185, 129, 0.05)" />
+                                    <!-- Icon: DB stack symbol -->
+                                    <text x="120" y="326" fill="#10b981" font-family="Plus Jakarta Sans" font-size="14" text-anchor="middle">🗄️</text>
+                                    <text x="120" y="342" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">POSTGRES</text>
+                                </g>
                             </g>
 
                             <!-- ORBITING NODE 4: EF CORE (Bottom-Right) -->
-                            <g class="orbit-item item-4">
-                                <circle cx="370" cy="340" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#f43f5e" stroke-width="2"/>
-                                <circle cx="370" cy="340" r="25" fill="rgba(244, 63, 94, 0.05)" />
-                                <!-- Icon: DB Link / Entity Framework symbol -->
-                                <text x="370" y="335" fill="#f43f5e" font-family="Plus Jakarta Sans" font-size="12" font-weight="bold" text-anchor="middle">EF</text>
-                                <text x="370" y="352" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">EF CORE</text>
+                            <g class="parallax-node" data-depth="0.65">
+                                <g class="orbit-item item-4">
+                                    <circle cx="370" cy="340" r="32" fill="rgba(17, 24, 39, 0.85)" stroke="#f43f5e" stroke-width="2"/>
+                                    <circle cx="370" cy="340" r="25" fill="rgba(244, 63, 94, 0.05)" />
+                                    <!-- Icon: DB Link / Entity Framework symbol -->
+                                    <text x="370" y="335" fill="#f43f5e" font-family="Plus Jakarta Sans" font-size="12" font-weight="bold" text-anchor="middle">EF</text>
+                                    <text x="370" y="352" fill="#e2e8f0" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold" text-anchor="middle">EF CORE</text>
+                                </g>
                             </g>
 
                             <!-- Definitions of Gradients and Filters -->
