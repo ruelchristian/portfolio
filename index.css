@@ -574,6 +574,9 @@ body.light-theme .btn-primary:hover {
 .item-2 { animation: float-slow 7s infinite ease-in-out alternate -1.5s; }
 .item-3 { animation: float-slow 8s infinite ease-in-out alternate -3s; }
 .item-4 { animation: float-slow 5s infinite ease-in-out alternate -4s; }
+.item-5 { animation: float-slow 6.5s infinite ease-in-out alternate -1s; }
+.item-6 { animation: float-slow 7.5s infinite ease-in-out alternate -2s; }
+.item-7 { animation: float-slow 5.5s infinite ease-in-out alternate -3.5s; }
 
 @keyframes float-slow {
     0% { transform: translateY(0); }
