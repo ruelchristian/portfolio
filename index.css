@@ -543,7 +543,6 @@ body.light-theme .btn-primary:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1000px;
 }
 
 .tech-svg {
@@ -551,8 +550,6 @@ body.light-theme .btn-primary:hover {
     max-width: 420px;
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
-    transform-style: preserve-3d;
-    transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .glow-dot {

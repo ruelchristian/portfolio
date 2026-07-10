@@ -415,35 +415,29 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        INTERACTIVE MOUSE-FOLLOW PARALLAX FOR TECH ATOM
        ========================================================================== */
-    const hero = document.getElementById('hero');
-    const techSvg = document.querySelector('.tech-svg');
+    const visualWrapper = document.querySelector('.visual-wrapper');
     const parallaxNodes = document.querySelectorAll('.parallax-node');
 
-    if (hero && techSvg) {
-        hero.addEventListener('mousemove', (e) => {
-            const rect = hero.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2; // Offset from center X
-            const y = e.clientY - rect.top - rect.height / 2;  // Offset from center Y
-            // Normalize offsets (increased to 90 for much stronger parallax movement range)
-            const moveX = (x / rect.width) * 90;
-            const moveY = (y / rect.height) * 90;
-
-            // Apply stronger 3D rotation tilt on the overall SVG
-            techSvg.style.transform = `rotateX(${-moveY * 0.55}deg) rotateY(${moveX * 0.55}deg)`;
+    if (visualWrapper) {
+        visualWrapper.addEventListener('mousemove', (e) => {
+            const rect = visualWrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2; // Offset from visual wrapper center X
+            const y = e.clientY - rect.top - rect.height / 2;  // Offset from visual wrapper center Y
             
+            // Normalize offsets (multiplied by 50 for clean, responsive 2D parallax travel)
+            const moveX = (x / rect.width) * 50;
+            const moveY = (y / rect.height) * 50;
+
             // Parallax shift the inner wrapper nodes (decoupled from the keyframe float loops!)
             parallaxNodes.forEach((node) => {
                 const depth = parseFloat(node.getAttribute('data-depth')) || 0.3;
                 node.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
-                node.style.transition = 'transform 0.08s ease-out';
+                node.style.transition = 'transform 0.1s cubic-bezier(0.25, 1, 0.5, 1)';
             });
         });
 
         // Reset positions smoothly on mouse leave
-        hero.addEventListener('mouseleave', () => {
-            techSvg.style.transform = '';
-            techSvg.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-            
+        visualWrapper.addEventListener('mouseleave', () => {
             parallaxNodes.forEach(node => {
                 node.style.transform = '';
                 node.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
