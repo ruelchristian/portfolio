@@ -306,7 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 access_key: accessKey,
                 name: name,
                 email: email,
-                subject: subject,
+                subject: `[Portfolio] ${subject}`,
+                from_name: name,
                 message: message,
                 "h-captcha-response": hCaptchaResponse
             })
