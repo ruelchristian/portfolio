@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruel Christian V. Umel | Junior Web Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Ruel Christian V. Umel, a Junior Web Developer specializing in C#, ASP.NET Core MVC, HTMX, and AI-assisted engineering. Incoming 4th Year BSIT student.">
+    <meta name="keywords" content="Ruel Christian Umel, Web Developer, C#, ASP.NET Core, HTMX, Docker, Portfolio, Developer Pasig">
+    <meta name="author" content="Ruel Christian V. Umel">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ruel Christian V. Umel | Portfolio">
+    <meta property="og:description" content="Junior Web Developer specializing in C#, ASP.NET Core, and modern web architectures. Discover his Capstone project and software engineering skills.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/ruelchristian">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Devicon for Technology Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="auto-theme">
+    <!-- Aurora Animated Background Blobs -->
+    <div class="aurora-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-accent">&lt;</span>ruel.dev<span class="logo-accent"> /&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active" id="link-hero">Home</a>
+                <a href="#about" class="nav-link" id="link-about">About</a>
+                <a href="#skills" class="nav-link" id="link-skills">Skills</a>
+                <a href="#projects" class="nav-link" id="link-projects">Projects</a>
+                <a href="#achievements" class="nav-link" id="link-achievements">Achievements</a>
+                <a href="#contact" class="nav-link" id="link-contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="section-container hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title fade-in-up" style="animation-delay: 0.1s;">
+                        Hi, I'm <span class="gradient-text text-glow">Ruel Christian</span>
+                    </h1>
+                    <div class="hero-subtitle fade-in-up" style="animation-delay: 0.2s;">
+                        <span id="typed-text"></span><span class="typed-cursor">|</span>
+                    </div>
+                    <p class="hero-description fade-in-up" style="animation-delay: 0.3s;">
+                        A passionate Incoming 4th Year IT student building robust backend workflows and responsive frontends. I combine strong foundations in C# and ASP.NET Core with dynamic frontend technologies and AI-assisted engineering pipelines.
+                    </p>
+                    <div class="hero-ctas fade-in-up" style="animation-delay: 0.4s;">
+                        <a href="#projects" class="btn btn-primary" id="btn-hero-projects">
+                            Explore Projects <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" id="btn-hero-contact">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="visual-wrapper">
+                        <!-- Custom Interactive SVG Tech Scene -->
+                        <svg class="tech-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background grid grid lines -->
+                            <path d="M50 100 H450 M50 200 H450 M50 300 H450 M50 400 H450" stroke="rgba(99, 102, 241, 0.05)" stroke-width="1.5"/>
+                            <path d="M100 50 V450 M200 50 V450 M300 50 V450 M400 50 V450" stroke="rgba(99, 102, 241, 0.05)" stroke-width="1.5"/>
+                            
+                            <!-- Aurora Glow -->
+                            <circle cx="250" cy="250" r="120" fill="url(#hero-glow)" opacity="0.3" filter="url(#blur-effect)"/>
+                            
+                            <!-- Central Database/Server Cylinder -->
+                            <g class="server-node" transform="translate(0, 0)">
+                                <!-- Cylinder top -->
+                                <ellipse cx="250" cy="180" rx="70" ry="25" fill="#1e1b4b" stroke="#818cf8" stroke-width="3"/>
+                                <ellipse cx="250" cy="180" rx="55" ry="18" fill="url(#server-gradient)"/>
+                                
+                                <!-- Cylinder middle body -->
+                                <path d="M180 180 V260 C180 285 320 285 320 260 V180" fill="#111827" fill-opacity="0.8" stroke="#818cf8" stroke-width="3"/>
+                                <path d="M180 220 C180 240 320 240 320 220" stroke="#6366f1" stroke-width="2" stroke-dasharray="5 5"/>
+                                <path d="M180 260 C180 280 320 280 320 260" stroke="#6366f1" stroke-width="2"/>
+                                
+                                <!-- Glowing server lights -->
+                                <circle cx="210" cy="205" r="5" fill="#34d399" class="glow-dot" style="animation-delay: 0.1s;"/>
+                                <circle cx="230" cy="205" r="5" fill="#38bdf8" class="glow-dot" style="animation-delay: 0.3s;"/>
+                                <circle cx="250" cy="205" r="5" fill="#6366f1" class="glow-dot" style="animation-delay: 0.5s;"/>
+                                
+                                <circle cx="210" cy="245" r="5" fill="#38bdf8" class="glow-dot" style="animation-delay: 0.4s;"/>
+                                <circle cx="230" cy="245" r="5" fill="#f43f5e" class="glow-dot" style="animation-delay: 0.2s;"/>
+                                <circle cx="250" cy="245" r="5" fill="#34d399" class="glow-dot" style="animation-delay: 0.6s;"/>
+                            </g>
+                            
+                            <!-- Floating Code Snippets and Tech Rings -->
+                            <g class="orbit-item item-1">
+                                <circle cx="120" cy="160" r="30" fill="rgba(17, 24, 39, 0.8)" stroke="#06b6d4" stroke-width="2"/>
+                                <text x="120" y="166" fill="#06b6d4" font-family="Fira Code" font-size="14" font-weight="bold" text-anchor="middle">C#</text>
+                            </g>
+                            
+                            <g class="orbit-item item-2">
+                                <circle cx="380" cy="190" r="35" fill="rgba(17, 24, 39, 0.8)" stroke="#6366f1" stroke-width="2"/>
+                                <text x="380" y="196" fill="#a5b4fc" font-family="Plus Jakarta Sans" font-size="12" font-weight="600" text-anchor="middle">.NET</text>
+                            </g>
+                            
+                            <g class="orbit-item item-3">
+                                <circle cx="160" cy="340" r="28" fill="rgba(17, 24, 39, 0.8)" stroke="#38bdf8" stroke-width="2"/>
+                                <text x="160" y="345" fill="#38bdf8" font-family="Fira Code" font-size="12" font-weight="bold" text-anchor="middle">SQL</text>
+                            </g>
+
+                            <g class="orbit-item item-4">
+                                <circle cx="340" cy="330" r="25" fill="rgba(17, 24, 39, 0.8)" stroke="#10b981" stroke-width="2"/>
+                                <text x="340" y="335" fill="#10b981" font-family="Fira Code" font-size="10" font-weight="bold" text-anchor="middle">HTMX</text>
+                            </g>
+
+                            <!-- Glowing circuit connections -->
+                            <path d="M150 160 Q210 160 210 195" stroke="#06b6d4" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="4 4"/>
+                            <path d="M345 190 Q290 190 290 195" stroke="#6366f1" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="4 4"/>
+                            <path d="M188 340 Q250 340 250 282" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="4 4"/>
+                            
+                            <!-- Definitions of Gradients and Filters -->
+                            <defs>
+                                <radialGradient id="hero-glow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#6366f1" stop-opacity="1"/>
+                                    <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+                                </radialGradient>
+                                <linearGradient id="server-gradient" x1="180" y1="180" x2="320" y2="180" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#4f46e5"/>
+                                    <stop offset="50%" stop-color="#6366f1"/>
+                                    <stop offset="100%" stop-color="#4338ca"/>
+                                </linearGradient>
+                                <filter id="blur-effect" x="0" y="0" width="500" height="500" filterUnits="userSpaceOnUse">
+                                    <feGaussianBlur stdDeviation="40"/>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll to About Section">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Background</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-info card glass">
+                        <h3 class="card-title"><i class="fa-solid fa-code text-indigo"></i> My Journey</h3>
+                        <p>
+                            I'm currently an incoming 4th-year <strong>Bachelor of Science in Information Technology (BSIT)</strong> student at ICCT Colleges, expecting to graduate in 2027. My path in web development is driven by a deep fascination with database design, clean backends, and responsive user experiences.
+                        </p>
+                        <p>
+                            Rather than sticking strictly to conventional methods, I actively adopt modern workflows—including <strong>AI-assisted engineering tools</strong> and containerized deployments—to design, test, and document software efficiently.
+                        </p>
+                        <p>
+                            Currently seeking an entry-level position where I can apply my skills in structured programming, system logic, and modern frontend tools.
+                        </p>
+                    </div>
+                    
+                    <div class="about-details">
+                        <div class="detail-card card glass">
+                            <div class="detail-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="detail-body">
+                                <h4>Education</h4>
+                                <p class="detail-subtitle">ICCT Colleges Foundation, Inc.</p>
+                                <p class="detail-text">BS in Information Technology (Expected 2027)</p>
+                                <p class="detail-subtext">Focus: DBMS, Web Dev, Software Architecture</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-card card glass">
+                            <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="detail-body">
+                                <h4>Location & Info</h4>
+                                <p class="detail-subtitle">Pasig, Metro Manila, Philippines</p>
+                                <p class="detail-text">Age: 25 | Languages: English, Tagalog</p>
+                                <p class="detail-subtext">Open to remote & local hybrid roles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Expertise</span>
+                    <h2 class="section-title">Technical Toolset</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Backend Skills -->
+                    <div class="skills-category card glass">
+                        <div class="category-header">
+                            <div class="category-icon bg-indigo"><i class="fa-solid fa-gears"></i></div>
+                            <h3>Backend Development</h3>
+                        </div>
+                        <div class="tech-cards-grid">
+                            <div class="tech-card" style="--brand-color: #68217a; --brand-glow-rgb: 104, 33, 122;">
+                                <div class="tech-card-icon"><i class="devicon-csharp-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">C#</span>
+                                    <span class="tech-card-desc">OOP Foundations</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #512bd4; --brand-glow-rgb: 81, 43, 212;">
+                                <div class="tech-card-icon"><i class="devicon-dot-net-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">ASP.NET MVC</span>
+                                    <span class="tech-card-desc">System Architecture</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #512bd4; --brand-glow-rgb: 81, 43, 212;">
+                                <div class="tech-card-icon"><i class="devicon-dotnetcore-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">EF Core</span>
+                                    <span class="tech-card-desc">Data Binding & Mapping</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #336791; --brand-glow-rgb: 51, 103, 145;">
+                                <div class="tech-card-icon"><i class="devicon-postgresql-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">PostgreSQL 16</span>
+                                    <span class="tech-card-desc">Relational Storage</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #00bcd4; --brand-glow-rgb: 0, 188, 212;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-database text-cyan"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">SQL Design</span>
+                                    <span class="tech-card-desc">Schema Normalization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Skills -->
+                    <div class="skills-category card glass">
+                        <div class="category-header">
+                            <div class="category-icon bg-cyan"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="tech-cards-grid">
+                            <div class="tech-card" style="--brand-color: #e34f26; --brand-glow-rgb: 227, 79, 38;">
+                                <div class="tech-card-icon"><i class="devicon-html5-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">HTML5</span>
+                                    <span class="tech-card-desc">Semantic Markup</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #1572b6; --brand-glow-rgb: 21, 114, 182;">
+                                <div class="tech-card-icon"><i class="devicon-css3-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">CSS3</span>
+                                    <span class="tech-card-desc">Variables & Layouts</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #f7df1e; --brand-glow-rgb: 247, 223, 30;">
+                                <div class="tech-card-icon"><i class="devicon-javascript-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">JavaScript</span>
+                                    <span class="tech-card-desc">ES6+ Async Logic</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #7952b3; --brand-glow-rgb: 121, 82, 179;">
+                                <div class="tech-card-icon"><i class="devicon-bootstrap-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Bootstrap 5</span>
+                                    <span class="tech-card-desc">Responsive Layouts</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #3d72d7; --brand-glow-rgb: 61, 114, 215;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-bolt text-indigo"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">HTMX</span>
+                                    <span class="tech-card-desc">Partial Page Swaps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Deployments -->
+                    <div class="skills-category card glass">
+                        <div class="category-header">
+                            <div class="category-icon bg-emerald"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3>Tools & Platforms</h3>
+                        </div>
+                        <div class="tech-cards-grid">
+                            <div class="tech-card" style="--brand-color: #f05032; --brand-glow-rgb: 240, 80, 50;">
+                                <div class="tech-card-icon"><i class="devicon-git-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Git & GitHub</span>
+                                    <span class="tech-card-desc">Branching Workflows</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #2496ed; --brand-glow-rgb: 36, 150, 237;">
+                                <div class="tech-card-icon"><i class="devicon-docker-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Docker</span>
+                                    <span class="tech-card-desc">Containers & Images</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #2496ed; --brand-glow-rgb: 36, 150, 237;">
+                                <div class="tech-card-icon"><i class="devicon-docker-plain colored"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Docker Compose</span>
+                                    <span class="tech-card-desc">Multi-Container Setup</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #00a2ed; --brand-glow-rgb: 0, 162, 237;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-server text-cyan"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Caddy Proxy</span>
+                                    <span class="tech-card-desc">Local LAN Routing</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #10b981; --brand-glow-rgb: 16, 185, 129;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-network-wired text-emerald"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">LAN Networks</span>
+                                    <span class="tech-card-desc">Local Server Deployments</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Assisted Engineering -->
+                    <div class="skills-category card glass">
+                        <div class="category-header">
+                            <div class="category-icon bg-rose"><i class="fa-solid fa-microchip"></i></div>
+                            <h3>AI-Assisted Engineering</h3>
+                        </div>
+                        <div class="tech-cards-grid">
+                            <div class="tech-card" style="--brand-color: #cc5a37; --brand-glow-rgb: 204, 90, 55;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-terminal" style="color: #cc5a37;"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Claude Code</span>
+                                    <span class="tech-card-desc">CLI Coding Agent</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #6366f1; --brand-glow-rgb: 99, 102, 241;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-robot text-indigo"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">MCP Tools</span>
+                                    <span class="tech-card-desc">External Integrations</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #06b6d4; --brand-glow-rgb: 6, 182, 212;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-wand-magic-sparkles text-cyan"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Agentic Coding</span>
+                                    <span class="tech-card-desc">Autonomous Workflows</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #10b981; --brand-glow-rgb: 16, 185, 129;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-bug-slash text-emerald"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">AI Debugging</span>
+                                    <span class="tech-card-desc">Code Diagnostics</span>
+                                </div>
+                            </div>
+                            <div class="tech-card" style="--brand-color: #6366f1; --brand-glow-rgb: 99, 102, 241;">
+                                <div class="tech-card-icon"><i class="fa-solid fa-angles-up text-indigo"></i></div>
+                                <div class="tech-card-info">
+                                    <span class="tech-card-name">Antigravity CLI</span>
+                                    <span class="tech-card-desc">Agentic Partner Coding</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Featured Work</span>
+                    <h2 class="section-title">Capstone Spotlight</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="project-showcase card glass">
+                    <div class="project-details">
+                        <div class="project-badge">BSIT Capstone Project — Defended</div>
+                        <h3 class="project-title">LAN-Based Administrative Information System with Data Analytics for Pasig Bliss III Admin Office</h3>
+                        <p class="project-subtitle">Developer & Programmer | Pasig Bliss Village III Admin Office</p>
+                        
+                        <p class="project-description">
+                            An offline-first, high-reliability administrative information system designed to digitize community management workflows for approximately 1,000 housing units under the PUSO (Pasig Urban Settlements Office) Bantay Pabahay program. Built to operate locally on the office LAN to bypass internet connectivity bottlenecks.
+                        </p>
+                        
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">ASP.NET Core MVC</span>
+                            <span class="tag">PostgreSQL 16</span>
+                            <span class="tag">HTMX</span>
+                            <span class="tag">Docker Compose</span>
+                            <span class="tag">Caddy Proxy</span>
+                        </div>
+                        
+                        <div class="project-features">
+                            <h4>Key System Modules:</h4>
+                            <ul>
+                                <li><i class="fa-solid fa-folder-open text-indigo"></i> <div><strong>Unit Registry</strong>: Consolidated resident profiles, building assignments, violations, and PDF summaries for 12 buildings, with Bulk Excel/CSV Import.</div></li>
+                                <li><i class="fa-solid fa-wallet text-indigo"></i> <div><strong>Amortization Payment Monitoring</strong>: Auto dues generation, manual entry of PUSO payments, and automatic Delinquency tagging.</div></li>
+                                <li><i class="fa-solid fa-file-signature text-indigo"></i> <div><strong>Service Request Management</strong>: Digital workflows (Filed ➔ Approved ➔ In Progress ➔ Completed) for Construction, Area Use, Internet, and Maintenance permits.</div></li>
+                                <li><i class="fa-solid fa-box-archive text-indigo"></i> <div><strong>Borrower's Slip Management</strong>: Tracking borrowed office items and equipment with background overdue checking.</div></li>
+                                <li><i class="fa-solid fa-chart-line text-indigo"></i> <div><strong>Data Analytics Dashboard</strong>: Real-time visual metrics for payment dues, service trends, and client satisfaction feedback.</div></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <button class="btn btn-primary" id="btn-project-features">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i> View Architecture Details
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-preview">
+                        <!-- Custom CSS/SVG Interactive App Mockup -->
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <span class="browser-dot red"></span>
+                                <span class="browser-dot yellow"></span>
+                                <span class="browser-dot green"></span>
+                                <div class="browser-address">pbv3-admin.local</div>
+                            </div>
+                            <div class="browser-body has-image">
+                                <img src="dashboard.avif" alt="LAN-Based Administrative System Dashboard" class="browser-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="achievements-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Credentials</span>
+                    <h2 class="section-title">Certifications & Achievements</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="achievements-grid">
+                    <div class="cert-card card glass">
+                        <div class="cert-glow"></div>
+                        <div class="cert-badge"><i class="fa-solid fa-award"></i></div>
+                        <h3 class="cert-title">Foundational C# Certification</h3>
+                        <p class="cert-issuer">Issued by freeCodeCamp & Microsoft (2025)</p>
+                        <p class="cert-desc">
+                            Validates proficiency in C# structures, variables, object-oriented concepts, LINQ basics, logic operations, error handling, and program compilation architectures.
+                        </p>
+                        <div class="cert-footer">
+                            <a href="https://www.freecodecamp.org/certification/fcc1d991779-a61e-43ba-99c8-3879e7402023/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" id="btn-cert-verify">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">Let's Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-channels">
+                        <div class="channel-card card glass">
+                            <div class="channel-icon bg-indigo"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="channel-info">
+                                <span>Email</span>
+                                <a href="mailto:ruelchristianumel@gmail.com">ruelchristianumel@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="channel-card card glass">
+                            <div class="channel-icon bg-cyan"><i class="fa-solid fa-phone"></i></div>
+                            <div class="channel-info">
+                                <span>Phone</span>
+                                <a href="tel:+639945369732">+63 994 536 9732</a>
+                            </div>
+                        </div>
+
+                        <div class="channel-card card glass">
+                            <div class="channel-icon bg-emerald"><i class="fa-brands fa-github"></i></div>
+                            <div class="channel-info">
+                                <span>GitHub</span>
+                                <a href="https://github.com/ruelchristian" target="_blank" rel="noopener noreferrer">github.com/ruelchristian</a>
+                            </div>
+                        </div>
+
+                        <div class="channel-card card glass">
+                            <div class="channel-icon bg-rose"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="channel-info">
+                                <span>LinkedIn</span>
+                                <a href="https://linkedin.com/in/ruelchristianumel" target="_blank" rel="noopener noreferrer">linkedin.com/in/ruelchristianumel</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container card glass">
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Name</label>
+                                    <input type="text" id="form-name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-email">Email</label>
+                                    <input type="email" id="form-email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" placeholder="Project Inquiry / Internship Opportunity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Ruel Christian V. Umel. All rights reserved.</p>
+            <p class="footer-meta">Crafted with passion using HTML, CSS, JavaScript, and Anime.js</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Drawer Modal (Architecture Details) -->
+    <div class="modal" id="architecture-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="btn-modal-close" aria-label="Close modal">&times;</button>
+            <h3 class="modal-title">System Architecture & Quality Standards</h3>
+            <div class="modal-body">
+                <p>
+                    The proposed system is engineered to solve operational bottlenecks in local community governance. It is designed and evaluated under strict software architecture standards:
+                </p>
+                <div class="architecture-diagram-container">
+                    <!-- Improved visual LAN-based architecture diagram -->
+                    <svg viewBox="0 0 540 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#6366f1"/>
+                            </marker>
+                            <marker id="arrow-grey" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                                <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Office LAN boundary box -->
+                        <rect x="10" y="10" width="520" height="260" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
+                        <text x="25" y="30" fill="#64748b" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold">PASIG BLISS V-III ADMIN OFFICE LAN (OFFLINE LOCAL NETWORK)</text>
+
+                        <!-- Workstation 1 (SuperAdmin / Admin) -->
+                        <rect x="30" y="60" width="120" height="75" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+                        <rect x="40" y="70" width="24" height="24" rx="4" fill="rgba(6, 182, 212, 0.1)"/>
+                        <path d="M46 76 H58 V82 H46 Z M44 84 H60 V85 H44 Z" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+                        <text x="72" y="80" fill="#0f172a" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold">Admin Staff PC</text>
+                        <text x="72" y="92" fill="#64748b" font-family="Plus Jakarta Sans" font-size="8">Browser Client</text>
+                        <text x="40" y="120" fill="#06b6d4" font-family="Fira Code" font-size="8" font-weight="500">pbv3-admin.local</text>
+
+                        <!-- Workstation 2 (Secretary / Staff) -->
+                        <rect x="30" y="155" width="120" height="75" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+                        <rect x="40" y="165" width="24" height="24" rx="4" fill="rgba(6, 182, 212, 0.1)"/>
+                        <path d="M46 171 H58 V177 H46 Z M44 179 H60 V180 H44 Z" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+                        <text x="72" y="175" fill="#0f172a" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold">Staff PC</text>
+                        <text x="72" y="187" fill="#64748b" font-family="Plus Jakarta Sans" font-size="8">Browser Client</text>
+                        <text x="40" y="215" fill="#06b6d4" font-family="Fira Code" font-size="8" font-weight="500">pbv3-admin.local</text>
+
+                        <!-- Local Server Rack Host -->
+                        <rect x="210" y="50" width="300" height="195" rx="10" fill="#ffffff" stroke="#475569" stroke-width="2"/>
+                        <rect x="220" y="60" width="90" height="16" rx="3" fill="#e2e8f0"/>
+                        <text x="225" y="71" fill="#475569" font-family="Plus Jakarta Sans" font-size="8" font-weight="bold">DOCKER SERVER HOST</text>
+
+                        <!-- Caddy reverse proxy container -->
+                        <rect x="230" y="90" width="260" height="40" rx="6" fill="#f1f5f9" stroke="#0ea5e9" stroke-width="1.5"/>
+                        <circle cx="245" cy="110" r="10" fill="rgba(14, 165, 233, 0.1)"/>
+                        <text x="245" y="113" fill="#0ea5e9" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle">⚡</text>
+                        <text x="265" y="110" fill="#0f172a" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold">Caddy Proxy Container</text>
+                        <text x="265" y="122" fill="#64748b" font-family="Plus Jakarta Sans" font-size="8">Handles Local Hostnames (Port 80/443)</text>
+
+                        <!-- ASP.NET Core application container -->
+                        <rect x="230" y="140" width="260" height="40" rx="6" fill="#f1f5f9" stroke="#6366f1" stroke-width="1.5"/>
+                        <circle cx="245" cy="160" r="10" fill="rgba(99, 102, 241, 0.1)"/>
+                        <text x="245" y="163" fill="#6366f1" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle">⚙️</text>
+                        <text x="265" y="160" fill="#0f172a" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold">ASP.NET Core Application Container</text>
+                        <text x="265" y="172" fill="#64748b" font-family="Plus Jakarta Sans" font-size="8">C# Logic Processor & HTMX HTML Builder</text>
+
+                        <!-- PostgreSQL 16 database container -->
+                        <rect x="230" y="190" width="260" height="45" rx="6" fill="#f1f5f9" stroke="#10b981" stroke-width="1.5"/>
+                        <circle cx="245" cy="212.5" r="10" fill="rgba(16, 185, 129, 0.1)"/>
+                        <text x="245" y="215.5" fill="#10b981" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold" text-anchor="middle">🗄️</text>
+                        <text x="265" y="208" fill="#0f172a" font-family="Plus Jakarta Sans" font-size="10" font-weight="bold">PostgreSQL 16 Database Container</text>
+                        <text x="265" y="222" fill="#64748b" font-family="Plus Jakarta Sans" font-size="8">Relational Store (Profiles, permits, logs)</text>
+
+                        <!-- Directional Routing Lines -->
+                        <path d="M 150 97.5 Q 185 97.5 222 105" stroke="#6366f1" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+                        <path d="M 150 192.5 Q 185 192.5 222 120" stroke="#6366f1" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+                        <path d="M 360 130 V 140" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3 3" fill="none" marker-end="url(#arrow-grey)"/>
+                        <path d="M 360 180 V 190" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3 3" fill="none" marker-end="url(#arrow-grey)"/>
+                    </svg>
+                </div>
+                <div class="tech-spec-grid">
+                    <div class="tech-spec-card">
+                        <h5>Offline-First LAN & Docker Compose Orchestration</h5>
+                        <p>Operates completely offline on the office local network to bypass internet outages. The environment orchestrates isolated <strong>Docker containers</strong> (C# app server, PostgreSQL 16 database, Caddy proxy server) via Docker Compose, securing data privacy and ensuring zero external dependencies.</p>
+                    </div>
+                    <div class="tech-spec-card">
+                        <h5>HTMX Server-Driven Reactivity</h5>
+                        <p>Avoids massive client-side JavaScript framework sizes. Powered by <strong>HTMX</strong>, the system performs lightning-fast DOM swaps using server-rendered HTML fragments, offering fluid single-page app (SPA) performance with virtually zero browser rendering overhead.</p>
+                    </div>
+                    <div class="tech-spec-card">
+                        <h5>Optimistic Concurrency Control (OCC)</h5>
+                        <p>Prevents database write conflicts (such as "lost updates") when multiple admin staff edit the same resident profile or amortization log simultaneously. Leverages EF Core concurrency tokens (PostgreSQL `xmin` columns) to detect conflicts and rollback unsafe transactions automatically.</p>
+                    </div>
+                    <div class="tech-spec-card">
+                        <h5>Automated Overdue Tracking Background Services</h5>
+                        <p>Utilizes background worker threads to automatically monitor equipment borrower slip logs, track return dates, and trigger delinquency alerts and overdue alerts without requiring manual staff checks.</p>
+                    </div>
+                    <div class="tech-spec-card">
+                        <h5>Bulk Data Migration (Excel/CSV Parser)</h5>
+                        <p>Designed with a secure parser script that allows staff to import thousands of legacy resident profiles from Excel/CSV formats in seconds, performing database schema verification and duplicate detection automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Lightbox Modal for Dashboard Screenshot -->
+    <div id="lightbox-modal" class="lightbox" aria-label="Fullscreen image preview">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Fullscreen Preview">
+    </div>
+
+    <!-- Floating Toast Notification -->
+    <div class="toast" id="toast-notification">
+        <div class="toast-content">
+            <i class="fa-solid fa-circle-check toast-icon"></i>
+            <div class="toast-message">
+                <span class="toast-title">Message Sent!</span>
+                <span class="toast-desc">Thank you. Ruel will get back to you shortly.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anime.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Custom Logic Script -->
+    <script src="index.js"></script>
+</body>
+</html>
