@@ -201,6 +201,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnIcon = submitBtn.querySelector('.btn-icon');
     const toast = document.getElementById('toast-notification');
 
+    // Helper to display toast notifications dynamically
+    function showToast(title, desc, type = 'success') {
+        if (!toast) return;
+
+        const toastTitle = toast.querySelector('.toast-title');
+        const toastDesc = toast.querySelector('.toast-desc');
+        const toastIcon = toast.querySelector('.toast-icon');
+
+        if (toastTitle) toastTitle.textContent = title;
+        if (toastDesc) toastDesc.textContent = desc;
+
+        if (toastIcon) {
+            toastIcon.className = 'toast-icon fa-solid';
+            if (type === 'success') {
+                toastIcon.classList.add('fa-circle-check');
+                toastIcon.style.color = '#10b981'; // Green
+            } else if (type === 'error') {
+                toastIcon.classList.add('fa-circle-xmark');
+                toastIcon.style.color = '#f43f5e'; // Red
+            } else {
+                toastIcon.classList.add('fa-circle-info');
+                toastIcon.style.color = '#38bdf8'; // Blue
+            }
+        }
+
+        // Show Toast Notification
+        toast.classList.add('show');
+        
+        // Animate toast entry
+        anime({
+            targets: '#toast-notification',
+            translateY: ['120%', '0%'],
+            opacity: [0, 1],
+            duration: 500,
+            easing: 'easeOutQuart'
+        });
+
+        // Auto-hide toast after 4 seconds
+        setTimeout(() => {
+            anime({
+                targets: '#toast-notification',
+                translateY: ['0%', '120%'],
+                opacity: [1, 0],
+                duration: 500,
+                easing: 'easeInQuart',
+                complete: () => {
+                    toast.classList.remove('show');
+                }
+            });
+        }, 4000);
+    }
+
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
@@ -209,43 +261,58 @@ document.addEventListener('DOMContentLoaded', () => {
         btnText.textContent = "Sending...";
         btnIcon.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
 
-        // Simulate secure form sending (1.5s delay)
-        setTimeout(() => {
-            // Reset button state
+        const name = document.getElementById('form-name').value;
+        const email = document.getElementById('form-email').value;
+        const subject = document.getElementById('form-subject').value;
+        const message = document.getElementById('form-message').value;
+
+        // Replace this with your Web3Forms access key (register free at https://web3forms.com)
+        const accessKey = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"; 
+
+        if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
+            // Simulation fallback
+            setTimeout(() => {
+                showToast("Simulation Successful!", "Recruiter form input validated. Add access key to index.js to receive real emails.", "info");
+                submitBtn.disabled = false;
+                btnText.textContent = "Send Message";
+                btnIcon.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
+                contactForm.reset();
+            }, 1200);
+            return;
+        }
+
+        // Real fetch request to Web3Forms API (Free tier form submitter)
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                access_key: accessKey,
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+        })
+        .then(async (response) => {
+            const json = await response.json();
+            if (response.status === 200) {
+                showToast("Message Sent!", "Thank you. Ruel will get back to you shortly.", "success");
+                contactForm.reset();
+            } else {
+                showToast("Submission Failed", json.message || "Something went wrong. Please try again.", "error");
+            }
+        })
+        .catch((error) => {
+            showToast("Network Error", "Could not connect to the form server. Please try again.", "error");
+        })
+        .finally(() => {
             submitBtn.disabled = false;
             btnText.textContent = "Send Message";
             btnIcon.innerHTML = '<i class="fa-solid fa-paper-plane"></i>';
-            
-            // Show Success Toast Notification
-            toast.classList.add('show');
-            
-            // Animate toast entry
-            anime({
-                targets: '#toast-notification',
-                translateY: ['120%', '0%'],
-                opacity: [0, 1],
-                duration: 500,
-                easing: 'easeOutQuart'
-            });
-
-            // Reset form input values
-            contactForm.reset();
-
-            // Auto-hide toast after 4 seconds
-            setTimeout(() => {
-                anime({
-                    targets: '#toast-notification',
-                    translateY: ['0%', '120%'],
-                    opacity: [1, 0],
-                    duration: 500,
-                    easing: 'easeInQuart',
-                    complete: () => {
-                        toast.classList.remove('show');
-                    }
-                });
-            }, 4000);
-
-        }, 1500);
+        });
     });
 
     /* ==========================================================================
