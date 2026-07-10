@@ -340,13 +340,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = hero.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2; // Offset from center X
             const y = e.clientY - rect.top - rect.height / 2;  // Offset from center Y
+            // Normalize offsets (increased to 90 for much stronger parallax movement range)
+            const moveX = (x / rect.width) * 90;
+            const moveY = (y / rect.height) * 90;
 
-            // Normalize offsets
-            const moveX = (x / rect.width) * 45;
-            const moveY = (y / rect.height) * 45;
-
-            // Apply 3D rotation tilt on the overall SVG
-            techSvg.style.transform = `rotateX(${-moveY * 0.4}deg) rotateY(${moveX * 0.4}deg)`;
+            // Apply stronger 3D rotation tilt on the overall SVG
+            techSvg.style.transform = `rotateX(${-moveY * 0.55}deg) rotateY(${moveX * 0.55}deg)`;
             
             // Parallax shift the inner wrapper nodes (decoupled from the keyframe float loops!)
             parallaxNodes.forEach((node) => {
