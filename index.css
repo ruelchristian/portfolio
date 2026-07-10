@@ -2,19 +2,19 @@
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 
-/* Dark Mode Colors (Default) */
+/* Dark Mode Colors (Default - Steel Slate & Royal Blue) */
 :root {
-    --bg-primary: hsl(222, 47%, 7%);
-    --bg-secondary: hsl(223, 47%, 11%);
-    --bg-accent: hsl(222, 47%, 4%);
+    --bg-primary: hsl(215, 30%, 8%);
+    --bg-secondary: hsl(215, 25%, 12%);
+    --bg-accent: hsl(215, 35%, 5%);
     --text-primary: hsl(210, 40%, 98%);
-    --text-secondary: hsl(215, 20%, 65%);
-    --accent-indigo: hsl(239, 84%, 67%);
-    --accent-indigo-rgb: 99, 102, 241;
-    --accent-cyan: hsl(188, 86%, 53%);
-    --accent-cyan-rgb: 6, 182, 212;
-    --accent-emerald: hsl(150, 84%, 55%);
-    --accent-rose: hsl(340, 82%, 59%);
+    --text-secondary: hsl(215, 18%, 68%);
+    --accent-indigo: hsl(220, 95%, 60%);
+    --accent-indigo-rgb: 37, 99, 235;
+    --accent-cyan: hsl(200, 95%, 50%);
+    --accent-cyan-rgb: 14, 165, 233;
+    --accent-emerald: hsl(150, 75%, 50%);
+    --accent-rose: hsl(340, 75%, 55%);
     
     --glass-bg: rgba(15, 23, 42, 0.45);
     --glass-border: rgba(255, 255, 255, 0.06);
@@ -28,17 +28,17 @@
     --font-mono: 'Fira Code', monospace;
 }
 
-/* Light Mode Overrides */
+/* Light Mode Overrides (Steel Slate theme) */
 body.light-theme {
-    --bg-primary: hsl(210, 40%, 98%);
+    --bg-primary: hsl(215, 20%, 98%);
     --bg-secondary: hsl(0, 0%, 100%);
-    --bg-accent: hsl(210, 40%, 95%);
-    --text-primary: hsl(222, 47%, 12%);
-    --text-secondary: hsl(215, 16%, 47%);
-    --accent-indigo: hsl(239, 84%, 57%);
-    --accent-cyan: hsl(188, 86%, 43%);
-    --accent-emerald: hsl(150, 84%, 40%);
-    --accent-rose: hsl(340, 82%, 52%);
+    --bg-accent: hsl(215, 20%, 94%);
+    --text-primary: hsl(215, 35%, 15%);
+    --text-secondary: hsl(215, 15%, 48%);
+    --accent-indigo: hsl(220, 90%, 56%);
+    --accent-cyan: hsl(200, 90%, 46%);
+    --accent-emerald: hsl(150, 70%, 42%);
+    --accent-rose: hsl(340, 75%, 50%);
     
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.08);
@@ -50,15 +50,15 @@ body.light-theme {
 /* Auto Theme fallback using Media Query */
 @media (prefers-color-scheme: light) {
     body.auto-theme {
-        --bg-primary: hsl(210, 40%, 98%);
+        --bg-primary: hsl(215, 20%, 98%);
         --bg-secondary: hsl(0, 0%, 100%);
-        --bg-accent: hsl(210, 40%, 95%);
-        --text-primary: hsl(222, 47%, 12%);
-        --text-secondary: hsl(215, 16%, 47%);
-        --accent-indigo: hsl(239, 84%, 57%);
-        --accent-cyan: hsl(188, 86%, 43%);
-        --accent-emerald: hsl(150, 84%, 40%);
-        --accent-rose: hsl(340, 82%, 52%);
+        --bg-accent: hsl(215, 20%, 94%);
+        --text-primary: hsl(215, 35%, 15%);
+        --text-secondary: hsl(215, 15%, 48%);
+        --accent-indigo: hsl(220, 90%, 56%);
+        --accent-cyan: hsl(200, 90%, 46%);
+        --accent-emerald: hsl(150, 70%, 42%);
+        --accent-rose: hsl(340, 75%, 50%);
         
         --glass-bg: rgba(255, 255, 255, 0.7);
         --glass-border: rgba(0, 0, 0, 0.08);
