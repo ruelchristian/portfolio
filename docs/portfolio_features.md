@@ -7,23 +7,27 @@ This documentation outlines the core interactive features implemented in Ruel Ch
 ## 1. Auto-Adaptive Theme (Light / Dark Mode)
 * **What it does**: Automatically detects the user's operating system preference (light or dark mode) and applies it dynamically. It also provides a manual toggle button in the navigation bar to allow users to override system settings.
 * **Implementation Details**:
-  - Uses CSS custom properties (variables) defined under `.light-theme`, `.dark-theme`, and the media query `@media (prefers-color-scheme: light)` for `.auto-theme`.
+  - Uses CSS custom properties (variables) defined under `.light-theme`, `:root` (default dark), and the media query `@media (prefers-color-scheme: light)` for `.auto-theme`.
+  - Dark mode has a base color of `#0f0f0f` with matching neutral slate components (`#161616` and `#0a0a0a`), while light mode uses a soft `#fafafa` base color with matching pure white card backdrops (`#ffffff`) and slate elements (`#f5f5f5`, `#111827`).
   - Manual overrides are saved to `localStorage` under the key `theme` and re-applied immediately upon subsequent page loads to prevent visual flash.
 * **Rationale**: Providing light/dark theme adaptability ensures an optimal viewing experience for all visitors, reducing eye strain for night-browsing tech recruiters while respecting user preferences.
 
-## 2. Animated Aurora Backdrop & Glassmorphic Interface
-* **What it does**: Displays three large colored background blobs ("aurora blobs") that slowly float and morph in the background. The text and project cards are styled as frosted glass panels overlaying these blobs.
+## 2. Adaptive Diagonal Grid & Animated Aurora Backdrop
+* **What it does**: Displays three large colored background blobs ("aurora blobs") that slowly float and morph, overlayed by a premium, sharp diagonal grid with an adaptive aesthetic. In dark mode, it features a glowing red/cyan neon layout; in light mode, it shifts to a clean, subtle dark-on-light grid pattern.
 * **Implementation Details**:
-  - CSS animations (`@keyframes float`) handle GPU-accelerated transition translations and rotations on absolute positioned elements.
+  - CSS animations (`@keyframes float`) handle GPU-accelerated transition translations and rotations on absolute positioned elements inside `.aurora-container`.
+  - The diagonal grid is implemented as a `body::before` pseudo-element referencing the dynamic `--grid-gradient` variable at `80px 80px` size.
+  - In dark mode, `--grid-gradient` uses repeating 45deg and -45deg linear gradients with `rgba(255, 0, 100, 0.2)` and `rgba(0, 255, 200, 0.15)` at a `40px` repeat step.
+  - In light mode, `--grid-gradient` adapts to a clean structure using `rgba(0, 0, 0, 0.1)` at a `40px` repeat step.
   - Card backdrops use `backdrop-filter: blur(16px)` along with a highly subtle translucent border and deep box shadows.
 * **Rationale**: Creates an ultra-premium, interactive 3D depth aesthetic that immediately engages users upon landing, avoiding a generic template feel.
 
 ## 3. Dynamic Typing Title Subheading
-* **What it does**: Cycles through a list of professional phrases (e.g., "Junior Web Developer", "C# & ASP.NET Core Specialist") with an interactive typing and erasing animation in the hero section.
+* **What it does**: Cycles through a list of professional phrases ("Software Engineer", "Backend Engineer", "C# & ASP.NET Core Developer", "AI-Assisted Engineering") with an interactive typing and erasing animation in the hero section.
 * **Implementation Details**:
   - Implemented in pure JavaScript using recursive timeouts to handle character extraction, substring rendering, and delays.
   - CSS animation flashes the text cursor (`|`) at a steady rate.
-* **Rationale**: Highlights Ruel's core specialties (C#, web development, education status) sequentially within a single eye-catching container, keeping the hero section clean and uncluttered.
+* **Rationale**: Highlights Ruel's core specialties (Software engineering, Backend development, C# & ASP.NET Core, and AI-assisted workflows) sequentially within a single eye-catching container, keeping the hero section clean and uncluttered.
 
 ## 4. Scroll Reveal & Intersection Observer Animations
 * **What it does**: Animates elements (fading in and sliding up) smoothly as the user scrolls them into the viewport. It also highlights the active section in the top navigation menu.
@@ -58,5 +62,14 @@ This documentation outlines the core interactive features implemented in Ruel Ch
 * **Implementation Details**:
   - Leverages CSS 3D properties (`perspective: 1000px`, `transform-style: preserve-3d`) to establish spatial depth.
   - Subtly maps client mouse movements to dynamically calculate translation offsets for orbits, nodes, and the C# nucleus at different speeds (depths).
+  - Uses `requestAnimationFrame` to throttle styling updates, locking them to the browser's display refresh rate to eliminate rendering stutter on high-polling rate mice.
+  - Leverages GPU-accelerated 3D translations (`translate3d`) for ultra-smooth rendering.
   - Automatically resets positions smoothly on mouseleave, returning to normal CSS floating loops.
 * **Rationale**: Immediate wow-factor on page load that highlights interactive scripting skills and backend priorities.
+
+## 9. Custom Styled SVG Favicon Icon
+* **What it does**: Displays the custom stylized "R" / "IR" badge as the website's favicon in the browser tab and bookmark icons.
+* **Implementation Details**:
+  - Leverages the styled `logo.svg` file linked inside the `<head>` of [index.html](file:///E:/OJT/PORTFOLIO/index.html) as `<link rel="icon" type="image/svg+xml" href="logo.svg?v=1">`.
+  - The SVG uses internal CSS styling (`<style>`) to render a solid black background square (`#000000`) and fills the geometric vector logo paths with solid white (`#ffffff`), matching the uploaded design reference.
+* **Rationale**: Anchors a unique visual brand representation directly in the browser's chrome and tabs, matching the modern, customized feel of the site.

@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const typedTextSpan = document.getElementById('typed-text');
     const textArray = [
-        "Backend Developer",
-        "C# & .NET Core Specialist",
-        "Incoming 4th Year BSIT Student",
-        "AI-Assisted Backend Engineer"
+        "Software Engineer",
+        "Backend Engineer",
+        "C# & ASP.NET Core Developer",
+        "AI-Assisted Engineering"
     ];
     const typingSpeed = 100;
     const erasingSpeed = 60;
@@ -419,23 +419,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const parallaxNodes = document.querySelectorAll('.parallax-node');
 
     if (visualWrapper) {
+        let ticking = false;
+        let moveX = 0;
+        let moveY = 0;
+
         visualWrapper.addEventListener('mousemove', (e) => {
             const rect = visualWrapper.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2; // Offset from visual wrapper center X
             const y = e.clientY - rect.top - rect.height / 2;  // Offset from visual wrapper center Y
             
             // Normalize offsets (multiplied by 50 for clean, responsive 2D parallax travel)
-            const moveX = (x / rect.width) * 50;
-            const moveY = (y / rect.height) * 50;
+            moveX = (x / rect.width) * 50;
+            moveY = (y / rect.height) * 50;
 
-            // Parallax shift the inner wrapper nodes (decoupled from the keyframe float loops!)
-            parallaxNodes.forEach((node) => {
-                const depth = parseFloat(node.getAttribute('data-depth')) || 0.3;
-                const tx = Math.round(moveX * depth);
-                const ty = Math.round(moveY * depth);
-                node.style.transform = `translate(${tx}px, ${ty}px)`;
-                node.style.transition = 'transform 0.1s cubic-bezier(0.25, 1, 0.5, 1)';
-            });
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // Parallax shift the inner wrapper nodes (decoupled from the keyframe float loops!)
+                    parallaxNodes.forEach((node) => {
+                        const depth = parseFloat(node.getAttribute('data-depth')) || 0.3;
+                        const tx = Math.round(moveX * depth);
+                        const ty = Math.round(moveY * depth);
+                        node.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+                        node.style.transition = 'transform 0.1s cubic-bezier(0.25, 1, 0.5, 1)';
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
 
         // Reset positions smoothly on mouse leave

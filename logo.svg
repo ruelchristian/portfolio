@@ -1,0 +1,10 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg-rect { fill: #000000; }
+    .logo-shape { fill: #ffffff; stroke: #ffffff; stroke-width: 10px; stroke-linejoin: round; stroke-linecap: round; }
+    .logo-line { stroke: #ffffff; stroke-width: 10px; stroke-linecap: round; }
+  </style>
+  <rect class="bg-rect" width="512" height="512" />
+  <path class="logo-shape" d="M183.273 164.768V405H96V85L183.273 164.768ZM183.273 164.768H323.879V216.71L304.485 234.333H254.061L210.424 305.754H249.212L320 405H416L336.485 295.551L409.212 225.986V154.565L331.636 85H183.273" />
+  <path class="logo-line" d="M184.242 85V163.841" />
+</svg>
